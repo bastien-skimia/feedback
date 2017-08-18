@@ -1,0 +1,7 @@
+@import '../QuiverScss/quiver';
+@import '../Layouts/config';
+
+footer{
+    background: $footer-color;
+    height: $footer-height;
+}

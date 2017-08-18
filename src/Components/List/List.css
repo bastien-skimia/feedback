@@ -1,0 +1,40 @@
+.table {
+  padding: 0 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; }
+
+.thead, .tbody {
+  display: flex;
+  flex-direction: column; }
+
+.thead {
+  border-bottom: 1px solid lightgrey; }
+
+.tr {
+  display: flex;
+  height: 45px;
+  line-height: 45px;
+  flex-direction: row; }
+
+.tbody .tr {
+  margin: 5px 0; }
+  .tbody .tr:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-radius: 10px; }
+
+.table .td {
+  min-width: 80px;
+  font-size: 16px;
+  position: relative; }
+  .table .td:nth-child(2) {
+    flex: 1;
+    line-height: 35px; }
+
+.anim-appear {
+  opacity: 0.01; }
+
+.anim-appear.anim-appear-active {
+  opacity: 1;
+  transition: opacity 2s ease-in; }

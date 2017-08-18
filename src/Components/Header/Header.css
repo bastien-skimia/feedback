@@ -1,0 +1,30 @@
+header:before, header:after {
+  content: '';
+  display: table; }
+
+header:after {
+  clear: both; }
+
+header {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #333e48;
+  height: 45px;
+  line-height: 45px;
+  display: flex;
+  color: white; }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  right: 0; }
+  nav ul {
+    display: flex;
+    flex-direction: row; }
+  nav li {
+    display: flex;
+    flex-direction: row; }

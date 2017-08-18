@@ -1,0 +1,24 @@
+@import '../QuiverScss/quiver';
+@import '../Layouts/config';
+header{
+    @include row();
+    background: $header-color;
+    height: 45px;
+    line-height: 45px;
+    display:flex;
+    color:white;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    right:0;
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+    li{
+        display: flex;
+        flex-direction: row;
+    }
+}

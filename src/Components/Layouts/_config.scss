@@ -1,0 +1,17 @@
+$primary-color : pal(#333e48);
+$body-color: pal(white);
+
+$header: 'header';
+$header-height: 45px;
+$header-color: $primary-color;
+
+$footer: 'footer';
+$footer-height: 25px;
+$footer-color: $primary-color;
+
+$feedback-columns: 1/4;
+$feedback-line-height: 45px;
+$feedback-good-color: pal(#00b0e6);
+$feedback-default-color: pal(#00b4aa);
+$feedback-warn-color: pal(#fa8c28);
+
