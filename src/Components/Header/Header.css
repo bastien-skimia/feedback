@@ -1,8 +1,8 @@
-header:before, header:after {
+header:before, nav ul:before, header:after, nav ul:after {
   content: '';
   display: table; }
 
-header:after {
+header:after, nav ul:after {
   clear: both; }
 
 header {
@@ -15,16 +15,38 @@ header {
   background: #333e48;
   height: 45px;
   line-height: 45px;
-  display: flex;
-  color: white; }
+  color: white;
+  display: flex; }
+
+.brand {
+  padding: 0 20px;
+  font-size: 21px; }
 
 nav {
-  display: flex;
-  flex-direction: row;
-  right: 0; }
+  min-width: 200px;
+  height: 45px;
+  line-height: 45px;
+  flex: 1; }
   nav ul {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 45px;
+    margin: 0;
+    padding-right: 20px;
+    list-style: none;
+    flex: 1; }
   nav li {
-    display: flex;
-    flex-direction: row; }
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    margin: 0 10px; }
+    nav li:hover {
+      cursor: pointer; }

@@ -16,8 +16,8 @@ class Header extends Component {
                 <div className="brand">Feedback Ranking App</div>  
                 <nav>
                     <ul>
-                        <li onClick={this.touchTest}>Feedback Ranking</li>
-                        <li onClick={this.touchTest2}>Product</li>
+                        <li onClick={this.touchTest}>Feedback Feature</li>
+                        <li onClick={this.touchTest2}>Feature</li>
                     </ul>    
                 </nav>
             </header>

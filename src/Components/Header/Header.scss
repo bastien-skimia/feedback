@@ -5,20 +5,39 @@ header{
     background: $header-color;
     height: 45px;
     line-height: 45px;
-    display:flex;
     color:white;
-}
-
-nav{
     display: flex;
-    flex-direction: row;
-    right:0;
+}
+.brand{
+    padding: 0 20px;
+    font-size: 21px;
+}
+nav{
+   //display:block;
+   min-width: 200px;
+   height: 45px;
+   line-height: 45px;
+   flex: 1;
     ul{
         display: flex;
         flex-direction: row;
+        justify-content: flex-end;   
+        @include row();
+        height: 45px;
+        line-height: 45px;
+        margin:0;
+        padding-right: 20px;
+        list-style: none;
+        flex: 1;
     }
     li{
-        display: flex;
-        flex-direction: row;
+        height: 45px;
+        line-height: 45px;
+        float: left;
+        margin: 0 10px;
+        &:hover{
+            cursor: pointer;
+           
+        }
     }
 }
