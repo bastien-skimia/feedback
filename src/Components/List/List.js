@@ -23,6 +23,7 @@ class List extends Component {
   
   render() {
     return (
+      
       <div className="table">
         <div className="thead">
           <div className="tr">
@@ -32,9 +33,8 @@ class List extends Component {
           </div>
         </div>
         <div className="tbody">
-        
           {this.state.feedbackData.map((v,i) =>  
-              <Row key={i.toString()} index={v.id.toString()} rank={v.rank.toString()} supporters={v.supporters.toString()} roi={v.roi}/>
+              <Row key={i.toString()} index={v.id.toString()} rank={v.rank.toString()} supporters={v.supporters.toString()} roi={v.roi} onDelete={}/>
           )}
         </div>
       </div>

@@ -13,7 +13,7 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <div className="brand">Feedback Ranking App</div>  
+                <div className="brand">Feedback App</div>  
                 <nav>
                     <ul>
                         <li onClick={this.touchTest}>Feedback Feature</li>

@@ -1,0 +1,68 @@
+[
+    {
+        "id":1,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":2,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":3,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":4,
+        "featureId": 1,
+        "roi": 2
+    },
+    {
+        "id":5,
+        "featureId": 1,
+        "roi": 2
+    },
+    {
+        "id":6,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":7,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":8,
+        "featureId": 1,
+        "roi": 3
+    },
+    {
+        "id":9,
+        "featureId": 1,
+        "roi": 2
+    },
+    {
+        "id":10,
+        "featureId": 2,
+        "roi": 3
+    },
+    {
+        "id":11,
+        "featureId": 2,
+        "roi": 3
+    },
+    {
+        "id":12,
+        "featureId": 2,
+        "roi": 3
+    },
+    {
+        "id":13,
+        "featureId": 2,
+        "roi": 2
+    }
+    
+]

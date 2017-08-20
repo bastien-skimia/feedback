@@ -1,11 +1,13 @@
 
-import React, { Component } from 'react';
+import React,{Component}from 'react';
 import './Row.css';
-
+import Connector from '../Connector/Connector'
+let Api = new Connector();
 
 class Row extends Component {
   constructor (props) {
     super(props)
+   
     this.state = {
       supporters : 0,
       rank:0
@@ -15,6 +17,8 @@ class Row extends Component {
   }
   ClassCategories (nb){
     switch (nb){
+      case 0:
+      return "warn"
       case 1:
       return "warn"
       case 3:
@@ -27,7 +31,9 @@ class Row extends Component {
     document.getElementById(id).classList.toggle("open");
   } 
   Delete (id){
-    alert('Are you sure you deleted this item : '+id);
+    Api.delete.Feature(id).then((response) => {
+     
+    })
   }
   Compteur (max,nameState,delai) {
     let i = 0;
@@ -57,7 +63,7 @@ class Row extends Component {
             <div className="td" onClick={() => this.toggleButton("row"+this.props.index)}><i className="roi"/><i className="roi"/><i className="roi"/></div>
             <div className="td action" id={"row"+this.props.index}>
               <div className="tr" >
-                <div className="td update" onClick={() => this.Delete(this.props.index)}>Update</div>
+                <div className="td update">Update</div>
                 <div className="td delete" onClick={() => this.Delete(this.props.index)}>Delete</div>
               </div> 
             </div> 
