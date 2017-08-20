@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(require('cors')())
 
 let staticData = []
-var feedBackmodel = ()=> {
+let feedBackmodel = ()=> {
     return {
         "id":null,
         "rank": null,
@@ -18,7 +18,8 @@ var feedBackmodel = ()=> {
         "roi": null
     }
 }
-var createFeedBackList = () =>{
+
+let createFeedBackList = () =>{
     var FeedBackList = [];
     for(index in staticData.features){
         let curFeatures = staticData.features[index]
@@ -53,6 +54,19 @@ var createFeedBackList = () =>{
     
     return FeedBackList
 }
+let createFeature = (id) => {
+    return {
+        id: id,
+        name : 'Default feature'
+    }
+}
+let createSupporter = (fId,roi) => {
+    return {
+        id: staticData.supporters.length + 1,
+        featureId : fId,
+        roi: roi
+    }
+}
 fs.readFile('./bdd/features.json', 'utf8', (err,features) => {
     staticData.features = JSON.parse(features)
     fs.readFile('./bdd/supporters.json', 'utf8', (err,supporters) => {
@@ -63,36 +77,38 @@ fs.readFile('./bdd/features.json', 'utf8', (err,features) => {
     })
 })
 
-
-
-
 app.get("/feedbacks",(req,res) => {
     staticData.feedbacks.data = createFeedBackList();
     res.send(staticData.feedbacks);
 });
-app.post("/supporter",(req,res) => {
-
-    staticData.feedbacks.data = createFeedBackList();
-    res.send(staticData.feedbacks);
+app.get("/features",(req,res) => {
+    res.send(staticData.features);
 });
-app.post("/feature",(req,res) => {
-    
+app.post("/newSupporter",(req,res) => {
+    staticData.supporters.push(createSupporter(parseFloat(req.body.id),parseFloat(req.body.roi)))
+    fs.writeFile('./bdd/supporters.json', JSON.stringify(staticData.supporters));
+    res.sendStatus(200);
+});
+app.post("/newFeature",(req,res) => {
+    const newFeature = createFeature(staticData.features.length + 1);
+    staticData.features.push(newFeature);
+    fs.writeFile('./bdd/features.json', JSON.stringify(staticData.features));
     staticData.feedbacks.data = createFeedBackList();
-    res.send(staticData.feedbacks);
+    res.send(staticData.feedbacks.data);
 });
 app.delete("/feature",(req,res) => {
     staticData.feedbacks.data = createFeedBackList();
     staticData.feedbacks.data.find((v,i)=>{
         if(v.id == req.body.id){
-            return  staticData.feedbacks.data = staticData.feedbacks.data.splice(i, 1)
+            return  staticData.feedbacks.data = staticData.feedbacks.data.splice(i,1)
         }
     })
     staticData.features.find((v,i)=>{
         if(v.id == req.body.id){
-            return staticData.features.splice(i, 1)
+            fs.writeFile('./bdd/features.json', JSON.stringify(staticData.features.splice(i,1)));
+            return staticData.features.splice(i,1)
         }
     })
-    console.log(staticData.features)
     res.sendStatus(200);
 });
 

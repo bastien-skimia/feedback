@@ -1,8 +1,8 @@
 
 import React,{Component}from 'react';
 import './Row.css';
-import Connector from '../Connector/Connector'
-let Api = new Connector();
+
+
 
 class Row extends Component {
   constructor (props) {
@@ -49,7 +49,6 @@ class Row extends Component {
     return left;
   }
   render() {
-    
     return (
         <div  className={this.ClassCategories(this.props.roi) + " tr"}>
             <div className="td" onClick={() => this.toggleButton("row"+this.props.index)}><span className="index">{this.props.index}</span></div>
@@ -58,12 +57,11 @@ class Row extends Component {
             <div className="td" onClick={() => this.toggleButton("row"+this.props.index)}><i className="roi"/><i className="roi"/><i className="roi"/></div>
             <div className="td action" id={"row"+this.props.index}>
               <div className="tr">
-                <div className="td update">Update</div>
                 <div className="td delete" onClick={this.props.onDelete}>Delete</div>
               </div> 
             </div> 
         </div>
-    );
+    )
   }
 }
  

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import List from '../List/List'
+import Vote from '../List/Vote'
 import './Header.css'
 
 class Header extends Component {
@@ -8,7 +9,7 @@ class Header extends Component {
         ReactDOM.render(<List />, document.getElementById('Container'))
     }
     touchTest2 () {
-        ReactDOM.render(<div>Page product</div>, document.getElementById('Container'))
+        ReactDOM.render(<Vote />, document.getElementById('Container'))
     }
     render() {
         return (

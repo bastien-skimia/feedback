@@ -106,8 +106,10 @@ progress{
     max-width:0px;
     &.open{
         flex:1;
-        min-width: 80px;
-        max-width:200px;
+        max-width: 90px;
+        &.large{
+            max-width: 180px;
+        }
     }
 }
 .delete{

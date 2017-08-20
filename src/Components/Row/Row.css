@@ -86,8 +86,9 @@ progress {
   max-width: 0px; }
   .table .td.action.open {
     flex: 1;
-    min-width: 80px;
-    max-width: 200px; }
+    max-width: 90px; }
+    .table .td.action.open.large {
+      max-width: 180px; }
 
 .delete, .update {
   line-height: 40px;

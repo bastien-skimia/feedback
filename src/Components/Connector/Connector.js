@@ -8,7 +8,25 @@ class Connector {
         .then(response => response.json())
         .then(response => response)
       },
+      Features : () => {
+        return fetch('http://localhost:4000/features')
+        .then(response => response.json())
+        .then(response => response)
+      },
       
+    }
+    this.post = {
+      newFeature : () => {
+        return fetch('http://localhost:4000/newFeature',{ method: 'POST',headers:myHeaders})
+        .then(response => response.json())
+        .then(response => response)
+      },
+      Supporter : (id,roi) => {
+        var form = JSON.stringify({id:id,roi:roi})
+        return fetch('http://localhost:4000/newSupporter',{ method: 'POST',headers:myHeaders , body:form})
+        .then(response => response.json())
+        .then(response => response)
+      },
     }
     this.delete = {
       Feature : (id) => {

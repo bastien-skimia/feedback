@@ -38,3 +38,22 @@
 .anim-appear.anim-appear-active {
   opacity: 1;
   transition: opacity 2s ease-in; }
+
+.table .add {
+  position: fixed;
+  bottom: 55px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  display: block;
+  background: #00b4aa;
+  color: white;
+  border-radius: 45px;
+  cursor: pointer; }
+  .table .add:hover {
+    background: #00817a; }
+
+input {
+  color: black;
+  width: 50px; }

@@ -47,3 +47,23 @@
     opacity: 1;
     transition: opacity 2s ease-in;
   }
+.table .add{
+    position: fixed;
+    bottom: 55px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    display: block;
+    background: $feedback-default-color;
+    color:white;
+    border-radius: 45px;
+    cursor: pointer;
+    &:hover{
+        background: pal($feedback-default-color,'d2');
+    }
+}
+input{
+    color: black;
+    width: 50px; 
+}
