@@ -25,6 +25,12 @@ class List extends Component {
   onDelete(id) {
     alert(`on delete from list ${id}`)
     Api.delete.Feature(id).then((response) => {
+      this.state.feedbackData.find((v,i) => {
+        if(v.id === parseFloat(id)){
+          delete this.state.feedbackData[i];
+          this.setState({feedbackData: this.state.feedbackData})
+        }
+      })
       
      })
   }
