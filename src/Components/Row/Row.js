@@ -59,7 +59,7 @@ class Row extends Component {
             <div className="td action" id={"row"+this.props.index}>
               <div className="tr">
                 <div className="td update">Update</div>
-                <div className="td delete" onClick={() => this.props.onDelete()}>Delete</div>
+                <div className="td delete" onClick={this.props.onDelete}>Delete</div>
               </div> 
             </div> 
         </div>
