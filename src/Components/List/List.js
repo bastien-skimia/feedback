@@ -13,6 +13,7 @@ class List extends Component {
       feedbackData : [],
       feedbacksHeaders : []
     }
+
     Api.get.FeedBackList().then((response) => {
       this.setState({
         feedbackData: response.data,
@@ -21,6 +22,12 @@ class List extends Component {
     })
   }
   
+  onDelete(id) {
+    alert(`on delete from list ${id}`)
+    Api.delete.Feature(id).then((response) => {
+      
+     })
+  }
   render() {
     return (
       
@@ -34,7 +41,7 @@ class List extends Component {
         </div>
         <div className="tbody">
           {this.state.feedbackData.map((v,i) =>  
-              <Row key={i.toString()} index={v.id.toString()} rank={v.rank.toString()} supporters={v.supporters.toString()} roi={v.roi} onDelete={}/>
+              <Row key={i.toString()} index={v.id.toString()} rank={v.rank.toString()} supporters={v.supporters.toString()} roi={v.roi} onDelete={()=> this.onDelete(v.id)}/>
           )}
         </div>
       </div>

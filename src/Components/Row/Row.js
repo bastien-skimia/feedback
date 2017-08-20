@@ -30,11 +30,6 @@ class Row extends Component {
   toggleButton (id){
     document.getElementById(id).classList.toggle("open");
   } 
-  Delete (id){
-    Api.delete.Feature(id).then((response) => {
-     
-    })
-  }
   Compteur (max,nameState,delai) {
     let i = 0;
     let state = {}
@@ -62,9 +57,9 @@ class Row extends Component {
             <div className="td" onClick={() => this.toggleButton("row"+this.props.index)}>{this.state.supporters}</div>
             <div className="td" onClick={() => this.toggleButton("row"+this.props.index)}><i className="roi"/><i className="roi"/><i className="roi"/></div>
             <div className="td action" id={"row"+this.props.index}>
-              <div className="tr" >
+              <div className="tr">
                 <div className="td update">Update</div>
-                <div className="td delete" onClick={() => this.Delete(this.props.index)}>Delete</div>
+                <div className="td delete" onClick={() => this.props.onDelete()}>Delete</div>
               </div> 
             </div> 
         </div>
